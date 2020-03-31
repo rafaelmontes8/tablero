@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('plantillanota')
 @section('titulo')
 : @lang('messages.lbeditar')
 @stop
@@ -9,18 +9,19 @@
 	<div class="row">
 		<div class="col">
 
-			@if($tablero)
+			@if($Note)
 			<!-- CRSF (Cross-site Request Fogery) -->
-			<form action="{{ route('tablero.editar') }}" method="post">
+			<form action="{{ route('nota.edit') }}" method="post">
 
-				<input type="hidden" name="id" value="{{ $tablero->idTab }}" />
+				<input type="hidden" name="id" value="{{ $Note->idNot }}" />
 				@csrf
 
 				<div class="row">
 					<div class="col-sm-4">
-						<input class="form-control" type="text" name="nom" 
-							   value="{{ $tablero->nombre }}"
-							   required />
+						{!! Form::select('idTab',$Table, $Note->idTab, ['class' => 'form-control','id' => 'select']) !!}
+					</div>
+					<div class="col-sm-4">
+					<input class="form-control" type="text" name="texto" autocomplete="off" value="{{$Note->texto}}" required autofocus />
 					</div>
 
 					<div class="col-sm-2">

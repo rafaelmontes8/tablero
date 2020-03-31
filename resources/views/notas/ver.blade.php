@@ -1,6 +1,7 @@
 @extends('plantilla')
+
 @section('titulo')
-: notas
+: @lang('messages.lbnotas')
 @stop
 
 @section('cuerpo')
@@ -8,7 +9,7 @@
 	<h4>K ase cuerpo?</h4>
 
 	@foreach ($notas as $nota)
-		<p>{{$nota->texto}} <strong style="">{{$nota->fecha}}</strong></p>
+		<p>{{$nota->texto}} <strong style="">{{$nota->fecha}}</strong> <a href="{{ route('nota.editview', ['id' => $nota->idNot]) }}"><i class="fas fa-edit"></i> @lang('messages.lbeditar')</a></p>
 
 	@endforeach
 

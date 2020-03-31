@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-	<title>@lang('messages.lbtablero')</title>
+	<title>@lang('messages.lbnotas')</title>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -29,7 +29,7 @@
 		<!-- título -->
 		<div class="row">
 			<div class="col">
-				<h1>@lang('messages.lbtablero') @yield('titulo')</h1>
+				<h1>@lang('messages.lbnotas') @yield('titulo')</h1>
 			</div>
 		</div>
 

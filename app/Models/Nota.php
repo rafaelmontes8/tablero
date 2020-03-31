@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nota extends Model
 {
+    protected $fillable = ['idTab', 'texto', 'fecha', 'completado'];
     // definimos el nombre de la tabla
     protected $table = 'Nota' ;
 
